@@ -29,7 +29,7 @@ if __name__ == "__main__":
     movieNames = loadMovieNames()
 
     # Get the raw data
-    lines = spark.read.text("hdfs:///user/hjim/ml-100k/u.data").rdd
+    lines = spark.read.text("hdfs:///user/hjim/hadoop/ml-100k/u.data").rdd
 
     # Convert it to a RDD of Row objects with (userID, movieID, rating)
     ratingsRDD = lines.map(parseInput)
